@@ -1,7 +1,9 @@
 //import react and reactDOM
 import React from 'react'
 import ReactDOM from 'react-dom'
+import faker from 'faker'
 import CommentDetail from './CommentDetail'
+import ApprovalCard from './ApprovalCard'
 
 // create react component
 // const App = function(){
@@ -10,7 +12,23 @@ import CommentDetail from './CommentDetail'
 const App = () => {
   return (
     <div className="ui container comments" >
-      <CommentDetail />
+      <br/>
+      <ApprovalCard>
+          <CommentDetail
+          avatarPic={faker.image.avatar()}
+          author="Cap"
+          commentDate="4/5/19"
+          comment="hail hydra"
+          />
+      </ApprovalCard>
+      <ApprovalCard>
+        <CommentDetail
+            avatarPic={faker.image.avatar()}
+            author="Thor"
+            commentDate="4/5/19"
+            comment="BEER!!"
+          />
+        </ApprovalCard>
     </div>
   )
 }
